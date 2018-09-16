@@ -51,7 +51,7 @@ public class MessageActivity extends AppCompatActivity {
             startActivity(intent);
         }
         else {
-            Toast.makeText(MessageActivity.this, "No Email app on your device", Toast.LENGTH_LONG).show();
+            Toast.makeText(MessageActivity.this, R.string.emailapp_not_found, Toast.LENGTH_LONG).show();
         }
     }
 

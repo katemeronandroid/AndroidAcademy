@@ -4,4 +4,5 @@
     <string name="message_hint">Type your message here...</string>
     <string name="email">EMAIL</string>
     <string name="email_to">Type email here...</string>
+    <string name="emailapp_not_found">No Email app on your device</string>
 </resources>
