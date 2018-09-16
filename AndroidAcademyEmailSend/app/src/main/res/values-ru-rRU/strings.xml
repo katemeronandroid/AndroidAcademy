@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroidAcademyEmailSend</string>
+    <string name="message_hint">Введите свое сообщение</string>
+    <string name="email">EMAIL</string>
+    <string name="preview">Превью</string>
+    <string name="email_to">Введите email получателя</string>
+</resources>
