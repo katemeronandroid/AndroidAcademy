@@ -8,3 +8,16 @@
 /build
 /captures
 .externalNativeBuild
+
+# IntelliJ
+./idea/workspace.xml
+.idea/modules.xml
+.idea/libraries
+.idea/caches
+.idea/gradle.xml
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Java class files
+*.class
