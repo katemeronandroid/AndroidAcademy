@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">AndroidAcademyEmailSend</string>
     <string name="preview">PREVIEW</string>
     <string name="message_hint">Type your message here...</string>
     <string name="email">EMAIL</string>

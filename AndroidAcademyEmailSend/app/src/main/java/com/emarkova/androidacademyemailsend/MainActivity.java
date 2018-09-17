@@ -1,5 +1,7 @@
 package com.emarkova.androidacademyemailsend;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +23,20 @@ public class MainActivity extends AppCompatActivity {
         init(savedInstanceState);
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(KEY_MESSAGE, messageText.getText().toString());
+        outState.putString(KEY_EMAIL,emailTo.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        emailTo.setText(savedInstanceState.getString(KEY_EMAIL));
+        messageText.setText(savedInstanceState.getString(KEY_MESSAGE));
+    }
+
     private void init(Bundle savedInstanceState) {
         emailTo = findViewById(R.id.editTextEmail);
         messageText = findViewById(R.id.editTextMessage);
@@ -39,24 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void openPreview() {
         if(messageText.getText().length() != 0){
-            Intent intent = new Intent(MainActivity.this, MessageActivity.class);
-            intent.putExtra(KEY_EMAIL, emailTo.getText().toString());
-            intent.putExtra(KEY_MESSAGE, messageText.getText().toString());
-            startActivity(intent);
+            MessageActivity.startMessageActivity(MainActivity.this, emailTo.getText().toString(), messageText.getText().toString());
         }
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString(KEY_MESSAGE, messageText.getText().toString());
-        outState.putString(KEY_EMAIL,emailTo.getText().toString());
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        emailTo.setText(savedInstanceState.getString(KEY_EMAIL));
-        messageText.setText(savedInstanceState.getString(KEY_MESSAGE));
-    }
 }

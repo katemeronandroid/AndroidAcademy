@@ -1,5 +1,6 @@
 package com.emarkova.androidacademyemailsend;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -24,18 +25,38 @@ public class MessageActivity extends AppCompatActivity {
         init(savedInstanceState);
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(KEY_MESSAGE, textView.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        textView.setText(savedInstanceState.getString(KEY_MESSAGE));
+    }
+
+    public static void startMessageActivity(Context context, String emailTo, String message) {
+        Intent intent = new Intent(context, MessageActivity.class);
+        intent.putExtra(KEY_EMAIL, emailTo);
+        intent.putExtra(KEY_MESSAGE, message);
+        context.startActivity(intent);
+    }
+
     private void init(Bundle savedInstanceState) {
         textView = findViewById(R.id.textViewMessage);
-        if(savedInstanceState != null)
+        if(savedInstanceState != null) {
             textView.setText(savedInstanceState.getString(KEY_MESSAGE));
-        else
+        } else {
             textView.setText(getIntent().getStringExtra(KEY_MESSAGE));
+        }
         address = getIntent().getStringExtra(KEY_EMAIL);
         buttonSend = findViewById(R.id.buttonSend);
         buttonSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               sendEmail();
+                sendEmail();
             }
         });
     }
@@ -49,21 +70,8 @@ public class MessageActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_TEXT, message);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
-        }
-        else {
+        } else {
             Toast.makeText(MessageActivity.this, R.string.emailapp_not_found, Toast.LENGTH_LONG).show();
         }
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString(KEY_MESSAGE, textView.getText().toString());
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        textView.setText(savedInstanceState.getString(KEY_MESSAGE));
     }
 }
