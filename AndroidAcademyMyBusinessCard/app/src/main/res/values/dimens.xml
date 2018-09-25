@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<dimen name="text_size">16sp</dimen>
+    <dimen name="marg_pad">8dp</dimen>
+    <dimen name="left_marg">50dp</dimen>
+    <dimen name="layout_z">28dp</dimen>
+    <dimen name="image_size">28dp</dimen>
+    <dimen name="size_first_layout">45dp</dimen>
+    <dimen name="photo_height">300dp</dimen>
+    <dimen name="size_second_layout">55dp</dimen>
+    <dimen name="size_third_layout">115dp</dimen>
+    <dimen name="size_forth_layout">105dp</dimen>
+    <dimen name="size_fifth_layout">45dp</dimen>
+    <dimen name="image_telegram_size">25dp</dimen>
+</resources>

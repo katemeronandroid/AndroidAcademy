@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Ekaterina Markova</string>
+    <string name="uni_desc">Faculty of computational mathematics and cybernetics</string>
+    <string name="short_desc">Technoserv Consulting</string>
+    <string name="long_desc">Ekaterina graduated from the Moscow State University in 2017. Has a working experience as a Siebel Developer. Now has a lot of passion in Android field. Also Ekaterina is studying korean language as a hobby.</string>
+    <string name="emailapp_not_found">No Email app on your device</string>
+    <string name="app_not_found">Application is not found</string>
+    <string name="hint_message">Enter a message...</string>
+    <string name="send_message">SEND MESSAGE</string>
+</resources>
