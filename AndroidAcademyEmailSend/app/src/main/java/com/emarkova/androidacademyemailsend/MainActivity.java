@@ -58,5 +58,4 @@ public class MainActivity extends AppCompatActivity {
             MessageActivity.startMessageActivity(MainActivity.this, emailTo.getText().toString(), messageText.getText().toString());
         }
     }
-
 }
