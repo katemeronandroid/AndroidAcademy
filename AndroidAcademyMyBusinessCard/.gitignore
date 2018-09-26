@@ -21,3 +21,4 @@ google-services.json
 
 # Java class files
 *.class
+'.idea' 
