@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void openPreview() {
         if(messageText.getText().length() != 0){
-            MessageActivity.startMessageActivity(MainActivity.this, emailTo.getText().toString(), messageText.getText().toString());
+            MessageActivity.start(MainActivity.this, emailTo.getText().toString(), messageText.getText().toString());
         }
     }
 }
