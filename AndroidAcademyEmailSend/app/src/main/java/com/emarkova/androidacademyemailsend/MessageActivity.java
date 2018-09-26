@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.jetbrains.annotations.NotNull;
+
 public class MessageActivity extends AppCompatActivity {
     private static final String KEY_EMAIL = "email_address";
     private static final String KEY_MESSAGE = "message";
@@ -17,6 +19,13 @@ public class MessageActivity extends AppCompatActivity {
     private String address = "katemeron@mail.ru";
     private TextView textView;
     private Button buttonSend;
+
+    public static void start(@NotNull Context context, String emailTo, String message) {
+        Intent intent = new Intent(context, MessageActivity.class);
+        intent.putExtra(KEY_EMAIL, emailTo);
+        intent.putExtra(KEY_MESSAGE, message);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +44,6 @@ public class MessageActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         textView.setText(savedInstanceState.getString(KEY_MESSAGE));
-    }
-
-    public static void startMessageActivity(Context context, String emailTo, String message) {
-        Intent intent = new Intent(context, MessageActivity.class);
-        intent.putExtra(KEY_EMAIL, emailTo);
-        intent.putExtra(KEY_MESSAGE, message);
-        context.startActivity(intent);
     }
 
     private void init(Bundle savedInstanceState) {
