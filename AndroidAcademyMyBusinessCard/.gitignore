@@ -10,6 +10,7 @@
 .externalNativeBuild
 
 # IntelliJ
+.idea
 ./idea/workspace.xml
 .idea/modules.xml
 .idea/libraries

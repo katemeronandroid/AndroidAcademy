@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
-
             Toast.makeText(MainActivity.this, R.string.emailapp_not_found, Toast.LENGTH_LONG).show();
         }
     }
