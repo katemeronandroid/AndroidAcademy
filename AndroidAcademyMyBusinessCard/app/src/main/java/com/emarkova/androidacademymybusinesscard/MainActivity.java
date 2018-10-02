@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.coordinator_main);
         init();
     }
 
@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
+
             Toast.makeText(MainActivity.this, R.string.emailapp_not_found, Toast.LENGTH_LONG).show();
         }
     }
